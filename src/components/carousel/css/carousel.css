@@ -1,0 +1,16 @@
+.carousel {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: auto;
+}
+
+.carousel-item {
+    color: white;
+    flex-shrink: 0;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
