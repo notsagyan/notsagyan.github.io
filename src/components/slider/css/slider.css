@@ -1,0 +1,31 @@
+.slider-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: scroll;
+    scrollbar-width: none;
+    position: relative;
+}
+
+.slider-container::-webkit-scrollbar {
+    display: none;
+}
+
+.slider-item {
+    flex-shrink: 0;
+}
+
+.slider-left {
+    position: sticky;
+    top: 50%;
+    left: 25px;
+    opacity: 1;
+    color: white;
+}
+
+.slider-right {
+    position: sticky;
+    top: 50%;
+    right: 25px;
+    opacity: 1;
+}

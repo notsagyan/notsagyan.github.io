@@ -1,6 +1,7 @@
 import '../css/home.css';
 import { useEffect, useRef, useState } from 'react';
 import Carousel from '../../components/carousel/js/carousel';
+import Slider from '../../components/slider/js/slider';
 
 const getRandom = (max, min) => {
     min = Math.ceil(min);
@@ -18,7 +19,7 @@ class Moon{
 
     draw = () => {
         this.ctx.beginPath();
-        this.ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, true);
+        this.ctx.arc(this.ctx.canvas.width - 150, 100, this.r, 0, 2 * Math.PI, true);
         this.ctx.fillStyle = '#Eff3f5';
         this.ctx.shadowBlur = 20;
         this.ctx.shadowColor = '#Eff3f5';
@@ -128,7 +129,6 @@ const Home = () => {
         <>
             <canvas className='canvas' ref={canvasRef}> 
             </canvas>
-
             <div className='social-container'>
                 <i className="fa-brands fa-github social-icon"></i>
                 <i className="fa-brands fa-linkedin-in social-icon"></i>
@@ -136,58 +136,90 @@ const Home = () => {
                 <i className="fa-brands fa-twitter social-icon"></i>
                 <i className="fa-brands fa-facebook social-icon"></i>
             </div>
-
             <div className='scroll-info'>
                 <p>Scroll to navigate</p>
                 <i className="fa-solid fa-angles-down"></i>
             </div>
 
-            <Carousel>
-                <div className='my-section intro' ref={first}>
-                    <div className='text-container'>    
-                        <div className='name'>
-                            <p className='first-name'>Sagyan&nbsp;</p>
-                            <p className='last-name'>Singh</p>
+            <div className='content'>
+                <Carousel>
+                    <div className='my-section landing-container' ref={first}>
+                        <div className='text-container'>    
+                            <div className='name'>
+                                <p className='first-name'>Sagyan&nbsp;</p>
+                                <p className='last-name'>Singh</p>
+                            </div>
+                            <p className='description'>Software Developer</p>
                         </div>
-                        <p className='description'>Software Developer</p>
+
+                        <button className='btn-primary'>Download CV</button>
                     </div>
 
-                    <button className='btn-primary'>Resume</button>
-                </div>
-
-                <div className='my-section languages'>
-                    <h1 style={{color:'white'}}>Second</h1>
-                </div>
-
-                <div className='my-section contact-container'>
-                    <p>Send a Message</p>
-                    <form ref={contactForm}>
-                        <div className='row'>
-                            <div className='form-group col-md-2'>
-                                <input className='form-control' name='first_name' placeholder='First Name*' onChange={handleContact} required></input>
-                            </div>
-                            <div className='form-group col-md-2'>
-                                <input className='form-control' name='middle_name' placeholder='Middle Name' onChange={handleContact}></input>
-                            </div>
-                            <div className='form-group col-md-2'>
-                                <input className='form-control' name='last_name' placeholder='Last Name*' onChange={handleContact} required></input>
-                            </div>
+                    <div className='my-section technology-container'>
+                        <div className='header-section'>
+                            <p className='heading'>Tools and Technologies</p>
+                            <p className='sub-heading'>Languages and Frameworks</p>
                         </div>
-                        <div className='row'>
-                            <div className='form-group col-md-6'>
-                                <input className='form-control' type='email' name='email' placeholder='Email*' onChange={handleContact} required></input>
+                        <Slider>
+                            <div className='card single-technology'>
+                                <i className="fa-brands fa-python"></i>
                             </div>
-                        </div>
-                        <div className='row'>
-                            <div className='form-group col-md-6'>
-                                <textarea className='form-control' type='email' name='message' placeholder='Message*' onChange={handleContact} required></textarea>
+                            <div className='card single-technology'>
+                                <i className="fa-brands fa-django"></i>
                             </div>
-                        </div>
-                        <button className='btn btn-primary' onClick={handleContactSubmit}>Send</button>
-                    </form>
-                </div> 
+                            <div className='card single-technology'>
+                                <i className="fa-brands fa-flask"></i>
+                            </div>
+                            <div className='card single-technology'>
+                                <i className="fa-brands fa-html5"></i>
+                            </div>
+                            <div className='card single-technology'>
+                                <i className="fa-brands fa-js"></i>
+                            </div>
+                            <div className='card single-technology'>
+                                <i className="fa-brands fa-python"></i>
+                            </div>
+                            <div className='card single-technology'>
+                                <i className="fa-brands fa-python"></i>
+                            </div>
+                            <div className='card single-technology'>
+                                <i className="fa-brands fa-python"></i>
+                            </div>
+                            <div className='card single-technology'>
+                                <i className="fa-brands fa-python"></i>
+                            </div>
+                        </Slider>
+                    </div>
 
-            </Carousel> 
+                    <div className='my-section contact-container'>
+                        <p>Send a Message</p>
+                        <form ref={contactForm}>
+                            <div className='row'>
+                                <div className='form-group col-md-2'>
+                                    <input className='form-control' name='first_name' placeholder='First Name*' onChange={handleContact} required></input>
+                                </div>
+                                <div className='form-group col-md-2'>
+                                    <input className='form-control' name='middle_name' placeholder='Middle Name' onChange={handleContact}></input>
+                                </div>
+                                <div className='form-group col-md-2'>
+                                    <input className='form-control' name='last_name' placeholder='Last Name*' onChange={handleContact} required></input>
+                                </div>
+                            </div>
+                            <div className='row'>
+                                <div className='form-group col-md-6'>
+                                    <input className='form-control' type='email' name='email' placeholder='Email*' onChange={handleContact} required></input>
+                                </div>
+                            </div>
+                            <div className='row'>
+                                <div className='form-group col-md-6'>
+                                    <textarea className='form-control' type='email' name='message' placeholder='Message*' onChange={handleContact} required></textarea>
+                                </div>
+                            </div>
+                            <button className='btn btn-primary' onClick={handleContactSubmit}>Send</button>
+                        </form>
+                    </div> 
+                </Carousel> 
+            </div>
         </>
     );
 }
