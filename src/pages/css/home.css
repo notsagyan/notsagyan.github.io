@@ -29,7 +29,7 @@
     align-items: center;
     text-align: center;
     justify-content: center;
-    position: sticky;
+    position: fixed;
     border-right: 1px solid rgb(255, 255, 255, 0.1);
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
