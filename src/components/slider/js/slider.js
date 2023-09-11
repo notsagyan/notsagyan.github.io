@@ -3,6 +3,10 @@ import '../css/slider.css';
 
 const Slider = (props) => {
     const [autoScroll, setAutoScroll] = useState(true);
+    const [scrollLength, setScrollLength] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [total, setTotal] = useState(0);
+
     const slider = useRef();
 
     const transformChildren = () => {
@@ -16,28 +20,78 @@ const Slider = (props) => {
         return element;
     }
 
+    const jumpTo = (index) => {
+        slider.current.scrollBy({
+            'left': -(scrollLength*total),
+            'behavior': 'smooth'
+        });
+    }
+
     const toggleAutoScroll = (bool) => {
         setAutoScroll(bool);
     }
 
+    const handleLeftBtn = () => {
+        slider.current.scrollBy({
+            left: -scrollLength,
+            behavior: "smooth"
+        });
+
+        setCurrentIndex((index) => {
+            return index==0 ? index:index-1
+        });
+    }
+
+    const handleRightBtn = () => {
+        if (currentIndex+1 == total){
+            jumpTo(0);
+            setCurrentIndex(0);
+        }
+        else {
+            slider.current.scrollBy({
+                left: scrollLength,
+                behavior: "smooth"
+            });
+
+            setCurrentIndex((index) => {
+                return index==total ? index:index+1
+            });
+        }
+    }
+
     useEffect(() => {
-        console.log(autoScroll);
+        setTotal(props.children.length);
+        const width = document.getElementsByClassName('slider-item')[0].getBoundingClientRect().width;
+        setScrollLength(width);
+    }, []);
+
+    useEffect(() => {
         const id = setInterval(() => {
             if (autoScroll){
-                slider.current.scrollBy({
-                    left: 100,
-                    behavior: 'smooth'
-                }); 
+                if (currentIndex+1 == total){
+                    jumpTo(0);
+                    setCurrentIndex(0);
+                }
+                else {
+                    slider.current.scrollBy({
+                        left: scrollLength,
+                        behavior: "smooth"
+                    });
+        
+                    setCurrentIndex((index) => {
+                        return index==total ? index:index+1
+                    });
+                } 
             }
         }, 1000);
 
         return () => clearInterval(id);
-    }, [autoScroll]);
+    }, [autoScroll, scrollLength, currentIndex]);
     return (
         <div className="slider-container" ref={slider} onMouseOver={() => toggleAutoScroll(false)} onMouseLeave={() => toggleAutoScroll(true)}>
-            <i class="fa-solid fa-chevron-left slider-left"></i>
+            <i className="fa-solid fa-chevron-left slider-left" onClick={handleLeftBtn}></i>
             {transformChildren()}
-            <i class="fa-solid fa-chevron-right slider-right"></i>
+            <i className="fa-solid fa-chevron-right slider-right" onClick={handleRightBtn}></i>
         </div>
     );
 }

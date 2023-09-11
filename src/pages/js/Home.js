@@ -136,10 +136,10 @@ const Home = () => {
                 <i className="fa-brands fa-twitter social-icon"></i>
                 <i className="fa-brands fa-facebook social-icon"></i>
             </div>
-            <div className='scroll-info'>
+            {/* <div className='scroll-info'>
                 <p>Scroll to navigate</p>
                 <i className="fa-solid fa-angles-down"></i>
-            </div>
+            </div> */}
 
             <div className='content'>
                 <Carousel>
@@ -152,23 +152,23 @@ const Home = () => {
                             <p className='description'>Software Developer</p>
                         </div>
 
-                        <button className='btn-primary'>Download CV</button>
+                        <button className='primary-btn'>Download CV</button>
                     </div>
 
                     <div className='my-section technology-container'>
                         <div className='header-section'>
-                            <p className='heading'>Tools and Technologies</p>
-                            <p className='sub-heading'>Languages and Frameworks</p>
+                            <p className='heading'>Skills</p>
+                            <p className='sub-heading'>Tools and Technologies</p>
                         </div>
                         <Slider>
                             <div className='card single-technology'>
                                 <i className="fa-brands fa-python"></i>
                             </div>
                             <div className='card single-technology'>
-                                <i className="fa-brands fa-django"></i>
+                                <i className="fa-brands fa-python"></i>
                             </div>
                             <div className='card single-technology'>
-                                <i className="fa-brands fa-flask"></i>
+                                <i className="fa-brands fa-python"></i>
                             </div>
                             <div className='card single-technology'>
                                 <i className="fa-brands fa-html5"></i>
@@ -192,30 +192,36 @@ const Home = () => {
                     </div>
 
                     <div className='my-section contact-container'>
-                        <p>Send a Message</p>
+                        <div className='header-section'>
+                            <p className='heading'>Contact</p>
+                            <p className='sub-heading'>Send a Message</p>
+                        </div>
                         <form ref={contactForm}>
                             <div className='row'>
-                                <div className='form-group col-md-2'>
+                                <div className='form-group col-md-4'>
                                     <input className='form-control' name='first_name' placeholder='First Name*' onChange={handleContact} required></input>
                                 </div>
-                                <div className='form-group col-md-2'>
+                                <div className='form-group col-md-4'>
                                     <input className='form-control' name='middle_name' placeholder='Middle Name' onChange={handleContact}></input>
                                 </div>
-                                <div className='form-group col-md-2'>
+                                <div className='form-group col-md-4'>
                                     <input className='form-control' name='last_name' placeholder='Last Name*' onChange={handleContact} required></input>
                                 </div>
                             </div>
+                            <br></br>
                             <div className='row'>
-                                <div className='form-group col-md-6'>
+                                <div className='form-group col-md-12'>
                                     <input className='form-control' type='email' name='email' placeholder='Email*' onChange={handleContact} required></input>
                                 </div>
                             </div>
+                            <br></br>
                             <div className='row'>
-                                <div className='form-group col-md-6'>
-                                    <textarea className='form-control' type='email' name='message' placeholder='Message*' onChange={handleContact} required></textarea>
+                                <div className='form-group col-md-12'>
+                                    <textarea className='form-control' rows='10' name='message' placeholder='Message*' onChange={handleContact} required></textarea>
                                 </div>
                             </div>
-                            <button className='btn btn-primary' onClick={handleContactSubmit}>Send</button>
+                            <br></br>
+                            <button className='primary-btn' onClick={handleContactSubmit}>Send</button>
                         </form>
                     </div> 
                 </Carousel> 

@@ -7,6 +7,7 @@
   --slate: #8892b0;
   --light-slate: #a8b2d1;
   --lightest-slate: #ccd6f6;
+  --gray: rgb(26, 26, 26);
   --white: #e6f1ff;
 }
 
@@ -20,6 +21,26 @@ body {
   background: var(--navy);
 }
 
+input, textarea {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -30,7 +51,22 @@ p {
   margin: 0;
 }
 
-.btn-primary {
+.form-control {
+  color: white;
+  border: var(--light-slate);
+}
+
+.form-control::placeholder {
+  color: white;
+}
+
+.form-control:focus {
+  border-color: var(--secondary);
+  box-shadow: 1px 1px 1px var(--secondary);
+}
+
+.primary-btn {
+  position: absolute;
   background-color: transparent;
   width: max-content;
   color: var(--secondary);
@@ -38,7 +74,7 @@ p {
   padding: 10px;
 }
 
-.btn-primary:hover {
+.primary-btn:hover {
   cursor: pointer;
   box-shadow: 4px 4px 1px 1px var(--secondary);
   border-radius: 3px;
