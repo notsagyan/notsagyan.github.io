@@ -3,6 +3,16 @@
     z-index: -100;
 }
 
+.header-section .heading {
+    color: var(--secondary);
+    font-size: 20px;
+}
+
+.header-section .sub-heading {
+    color: var(--lightest-slate);
+    font-size: 27px;
+}
+
 .scroll-info {
     display: flex;
     flex-direction: column;
@@ -73,7 +83,6 @@
 }
 
 .content {
-    border: 0px solid white;
     display: flex;
     flex-direction: column;
     width: calc(100vw - 115px);
@@ -85,23 +94,19 @@
 }
 
 .landing-container {
-    border: 0px solid white;
     display: flex;
     flex-direction: column;
-    padding: 0;
     align-items: center;
     justify-content: center;
-    padding: 0;
 }
 
 .text-container {
-    border: 0px solid white;
     display: flex;
-    opacity: 1;
     flex-direction: column;
     width: min-content;
     align-items: center;
     justify-content: center;
+    margin-right: 30px;
 }
 
 .name {
@@ -117,27 +122,33 @@
 }
 
 .description {
-    border: 0px solid white;
     width: min-content;
     color: var(--light-slate);
-    font-size: 35px;
-    margin-top: 15px;
+    font-size: 30px;
+    margin-top: 5px;
     white-space: nowrap;
 }
 
-.landing-container .btn-primary {
+.landing-container .primary-btn {
     font-size: 18px;
     margin-top: 25px;
+    margin-right: 30px;
 }
 
 .technology-container {
-    border: 0px solid white;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     justify-content: center;
-    width: 100%;
+}
+
+.technology-container .header-section {
+    margin-right: 25px;
+}
+
+.technology-container .slider-container {
+    margin-bottom: 34px;
 }
 
 .single-technology {
@@ -148,23 +159,13 @@
     color: white;
 }
 
-.header-section {
+.technology-container .header-section {
     display: flex;
     flex-direction: column;
-    margin-bottom: 25px;
-}
-
-.header-section .heading {
-    color: var(--secondary);
-    font-size: 20px;
-}
-
-.header-section .sub-heading {
-    font-size: 30px;
+    margin-bottom: 50px;
 }
 
 .slider-container {
-    border: 0px solid white;
     width: 70%;
     height: 400px;
     column-gap: 25px;
@@ -199,17 +200,29 @@
 }
 
 .contact-container .header-section {
-    margin-top: -25px;
+    margin-right: 40px;
 }
 
+.contact-container form {
+    margin-right: 40px;
+    margin-top: 15px;
+}
 .contact-container .form-control, .contact-container textarea {
     color: white;
 }
 
+.contact-container .form-control::placeholder, .contact-container textarea::placeholder {
+    color: rgb(163, 163, 163);
+}
+
 .contact-container input, .contact-container textarea {
-    background-color: rgb(48, 48, 48, 0.3);
+    background-color: rgb(48, 48, 48, 0.2);
 }
 
 .contact-container input:focus, .contact-container textarea:focus {
-    background-color: rgb(48, 48, 48, 0.3);
+    background-color: rgb(48, 48, 48, 0.2);
+}
+
+.contact-container .primary-btn {
+    margin-top: 25px;
 }

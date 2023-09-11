@@ -66,12 +66,12 @@ p {
 }
 
 .primary-btn {
-  position: absolute;
   background-color: transparent;
   width: max-content;
   color: var(--secondary);
   border: 1px solid var(--secondary);
   padding: 10px;
+  transition-duration: 500ms;
 }
 
 .primary-btn:hover {
@@ -80,6 +80,7 @@ p {
   border-radius: 3px;
   margin-top: -5px;
   margin-left: -5px;
+  transition-duration: 300ms;
 }
 
 .card {

@@ -111,7 +111,7 @@ const Home = () => {
 
     const handleContactSubmit = (e) => {
         e.preventDefault();
-        contactForm.current.isValid();
+        contactForm.current.reportValidity();
     }
 
     useEffect(() => {
@@ -217,7 +217,7 @@ const Home = () => {
                             <br></br>
                             <div className='row'>
                                 <div className='form-group col-md-12'>
-                                    <textarea className='form-control' rows='10' name='message' placeholder='Message*' onChange={handleContact} required></textarea>
+                                    <textarea className='form-control' rows='7' name='message' placeholder='Message*' onChange={handleContact} required></textarea>
                                 </div>
                             </div>
                             <br></br>
