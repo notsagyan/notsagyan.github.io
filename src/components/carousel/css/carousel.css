@@ -1,10 +1,13 @@
-.carousel {
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
+.carousel-container {
+    position: relative;
 }
 
-.carousel-item {
+.carousel-wrapper {
+    position: relative;
+}
+
+.my-carousel-item {
+    position: absolute;
     color: white;
     flex-shrink: 0;
 }
@@ -12,3 +15,4 @@
 .carousel::-webkit-scrollbar {
     display: none;
 }
+

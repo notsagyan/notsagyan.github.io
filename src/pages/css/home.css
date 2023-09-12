@@ -5,12 +5,13 @@
 
 .header-section .heading {
     color: var(--secondary);
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .header-section .sub-heading {
     color: var(--lightest-slate);
-    font-size: 27px;
+    font-size: 28px;
+    font-weight: 700;
 }
 
 .scroll-info {
@@ -90,7 +91,10 @@
 }
 
 .my-section {
+    display: flex;
+    flex-direction: column;
     height: 100vh;
+    width: 100%;
 }
 
 .landing-container {
@@ -125,12 +129,12 @@
     width: min-content;
     color: var(--light-slate);
     font-size: 30px;
+    font-weight: 500;
     margin-top: 5px;
     white-space: nowrap;
 }
 
 .landing-container .primary-btn {
-    font-size: 18px;
     margin-top: 25px;
     margin-right: 30px;
 }
@@ -149,10 +153,31 @@
 
 .technology-container .slider-container {
     margin-bottom: 34px;
+    height: min-content;
+}
+
+.card-container {
+    position: relative;
+    height: auto;
 }
 
 .single-technology {
     background-color: transparent;
+    padding: 25px;
+    background-color: var(--light-navy);
+}
+
+.single-technology p {
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+}
+
+.card-container .caption {
+    font-size: 17px;
+    margin-top: 15px;
+    color: var(--light-slate);
+    font-weight: 600;
 }
 
 .technology-container i {
@@ -177,7 +202,6 @@
     align-items: center;
     text-align: center;
     justify-content: center;
-    height: min-content;
     width: 200px;
     padding: 25px;
 }
@@ -188,6 +212,38 @@
 
 .slider-container .single-technology i {
     font-size: 150px;
+}
+
+.project-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.gallery-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 0px;
+    column-gap: 0px;
+    height: 70%;
+    width: 90%;
+    overflow: scroll;
+}
+
+.project-container .header-section {
+    margin-bottom: 35px;
+}
+
+.img {
+    height: 300px;
+    width: 350px;
 }
 
 .contact-container {

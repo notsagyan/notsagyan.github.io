@@ -67,6 +67,8 @@ p {
 
 .primary-btn {
   background-color: transparent;
+  font-size: 16px;
+  font-weight: 500;
   width: max-content;
   color: var(--secondary);
   border: 1px solid var(--secondary);

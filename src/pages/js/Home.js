@@ -152,7 +152,7 @@ const Home = () => {
                             <p className='description'>Software Developer</p>
                         </div>
 
-                        <button className='primary-btn'>Download CV</button>
+                        <button className='primary-btn'>Resume</button>
                     </div>
 
                     <div className='my-section technology-container'>
@@ -161,40 +161,52 @@ const Home = () => {
                             <p className='sub-heading'>Tools and Technologies</p>
                         </div>
                         <Slider>
-                            <div className='card single-technology'>
-                                <i className="fa-brands fa-python"></i>
+                            <div className='card-container'>
+                                <div className='card single-technology'>
+                                    <i className="fa-brands fa-python"></i>
+                                </div>
+                                <p className='caption'>Python</p>
                             </div>
-                            <div className='card single-technology'>
-                                <i className="fa-brands fa-python"></i>
+                            <div className='card-container'>
+                                <div className='card single-technology'>
+                                    <i className="fa-brands fa-python"></i>
+                                </div>
+                                <p className='caption'>Python</p>
                             </div>
-                            <div className='card single-technology'>
-                                <i className="fa-brands fa-python"></i>
+                            <div className='card-container'>
+                                <div className='card single-technology'>
+                                    <i className="fa-brands fa-python"></i>
+                                </div>
+                                <p className='caption'>Python</p>
                             </div>
-                            <div className='card single-technology'>
-                                <i className="fa-brands fa-html5"></i>
+                            <div className='card-container'>
+                                <div className='card single-technology'>
+                                    <i className="fa-brands fa-python"></i>
+                                </div>
+                                <p className='caption'>Python</p>
                             </div>
-                            <div className='card single-technology'>
-                                <i className="fa-brands fa-js"></i>
-                            </div>
-                            <div className='card single-technology'>
-                                <i className="fa-brands fa-python"></i>
-                            </div>
-                            <div className='card single-technology'>
-                                <i className="fa-brands fa-python"></i>
-                            </div>
-                            <div className='card single-technology'>
-                                <i className="fa-brands fa-python"></i>
-                            </div>
-                            <div className='card single-technology'>
-                                <i className="fa-brands fa-python"></i>
-                            </div>
+                        </Slider>
+                    </div>
+
+                    <div className='my-section project-container'>
+                        <div className='header-section'>
+                            <p className='heading'>Works</p>
+                            <p className='sub-heading'>My Projects</p>
+                        </div>
+                        <Slider>
+                            <img className='img' src='https://images.unsplash.com/photo-1543373014-cfe4f4bc1cdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGlnaCUyMHJlcyUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'></img>
+                            <img className='img' src='https://images.unsplash.com/photo-1543373014-cfe4f4bc1cdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGlnaCUyMHJlcyUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'></img>
+                            <img className='img' src='https://images.unsplash.com/photo-1543373014-cfe4f4bc1cdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGlnaCUyMHJlcyUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'></img>
+                            <img className='img' src='https://images.unsplash.com/photo-1543373014-cfe4f4bc1cdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGlnaCUyMHJlcyUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'></img>
+                            <img className='img' src='https://images.unsplash.com/photo-1543373014-cfe4f4bc1cdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGlnaCUyMHJlcyUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'></img>
+                            <img className='img' src='https://images.unsplash.com/photo-1543373014-cfe4f4bc1cdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGlnaCUyMHJlcyUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'></img>
                         </Slider>
                     </div>
 
                     <div className='my-section contact-container'>
                         <div className='header-section'>
                             <p className='heading'>Contact</p>
-                            <p className='sub-heading'>Send a Message</p>
+                            <p className='sub-heading'>Let's Talk !</p>
                         </div>
                         <form ref={contactForm}>
                             <div className='row'>
