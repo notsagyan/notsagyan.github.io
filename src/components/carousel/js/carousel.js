@@ -19,6 +19,7 @@ const Carousel = (props) => {
             item.style.transform = `translateY(${index}00vh)`; 
 
             item.onwheel = (e) => {
+                e.preventDefault();
                 if (e.deltaY < 0){
                     var count = index-1 < 0 ? 0 : index-1;
                     document.getElementsByClassName('carousel-wrapper')[0].style.transitionDuration = '700ms';

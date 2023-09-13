@@ -136,10 +136,6 @@ const Home = () => {
                 <i className="fa-brands fa-twitter social-icon"></i>
                 <i className="fa-brands fa-facebook social-icon"></i>
             </div>
-            {/* <div className='scroll-info'>
-                <p>Scroll to navigate</p>
-                <i className="fa-solid fa-angles-down"></i>
-            </div> */}
 
             <div className='content'>
                 <Carousel>
@@ -153,6 +149,28 @@ const Home = () => {
                         </div>
 
                         <button className='primary-btn'>Resume</button>
+                    </div>
+
+                    <div className='my-section about-us-container'>
+                        <div className='header-section'>
+                            <p className='heading'>Sagyan</p>
+                            <p className='sub-heading'>About Me</p>
+                        </div>
+                        <div className='info-container'>
+                            <div className='img-container'>
+                                <img className='img' src='https://images.unsplash.com/photo-1543373014-cfe4f4bc1cdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGlnaCUyMHJlcyUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'></img>
+                            </div>
+                            <div class='info'>
+                                <p>Software developer with a strong foundation in software engineering and programming principles. Proficient in a wide range of languages on different platforms with a passion to learn and master new technologies. 3+ years of experience in Full Stack Development with a strong focus on backend.</p>
+                                <br></br>
+                                <p>Python (Django, FastAPI, Flask, Selenium)</p>
+                                <p>HTML/CSS</p>
+                                <p>Javascript (React JS, Typescript, JQuery)</p>
+                                <p>Docker</p>
+                                <p>Kubernetes</p>
+                                <p>Agile</p>
+                            </div>
+                        </div>
                     </div>
 
                     <div className='my-section technology-container'>
