@@ -119,10 +119,20 @@ const Home = () => {
         canvas.height = window.innerHeight;
         canvas.width = window.innerWidth;
 
-        const ctx = canvas.getContext('2d');
+        var ctx = canvas.getContext('2d');
 
-        const a = new Animate(ctx);
-        a.init();
+        var moon = new Moon(ctx);
+        moon.draw();
+
+        window.onresize = () => {
+            canvas.height = window.innerHeight;
+            canvas.width = window.innerWidth;
+
+            var ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+            var moon = new Moon(ctx);
+            moon.draw();
+        }
     }, []);
 
     return (
@@ -160,7 +170,7 @@ const Home = () => {
                             <div className='img-container'>
                                 <img className='img' src='https://images.unsplash.com/photo-1543373014-cfe4f4bc1cdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGlnaCUyMHJlcyUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'></img>
                             </div>
-                            <div class='info'>
+                            <div className='info'>
                                 <p>Software developer with a strong foundation in software engineering and programming principles. Proficient in a wide range of languages on different platforms with a passion to learn and master new technologies. 3+ years of experience in Full Stack Development with a strong focus on backend.</p>
                                 <br></br>
                                 <p>Python (Django, FastAPI, Flask, Selenium)</p>

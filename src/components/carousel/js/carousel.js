@@ -1,7 +1,9 @@
-import { useEffect, cloneElement } from "react"
+import { useEffect, useRef, cloneElement } from "react"
 import '../css/carousel.css';
 
 const Carousel = (props) => {
+    const wrapper = useRef();
+
     const transformer = () => {
         var elements = props.children.map((item, index) => {
             return cloneElement(item, {
@@ -13,23 +15,28 @@ const Carousel = (props) => {
         return elements;
     }
 
+    const handleScroll = (e, max, index) => {
+        e.preventDefault();
+            
+        if (e.deltaY < 0){
+            var count = index-1 < 0 ? 0 : index-1;
+            document.getElementsByClassName('carousel-wrapper')[0].style.transitionDuration = '700ms';
+            document.getElementsByClassName('carousel-wrapper')[0].style.transform = `translateY(-${count}00vh)`;
+        }
+        else {
+            var count = index+1 >= max ? index : index+1;
+            document.getElementsByClassName('carousel-wrapper')[0].style.transitionDuration = '700ms';
+            document.getElementsByClassName('carousel-wrapper')[0].style.transform = `translateY(-${count}00vh)`;
+        }
+    }
+
     useEffect(() => {
         var max = document.getElementsByClassName('my-carousel-item').length;
         Array.from(document.getElementsByClassName('my-carousel-item')).forEach((item, index) => {
             item.style.transform = `translateY(${index}00vh)`; 
-
-            item.onwheel = (e) => {
-                e.preventDefault();
-                if (e.deltaY < 0){
-                    var count = index-1 < 0 ? 0 : index-1;
-                    document.getElementsByClassName('carousel-wrapper')[0].style.transitionDuration = '700ms';
-                    document.getElementsByClassName('carousel-wrapper')[0].style.transform = `translateY(-${count}00vh)`;
-                }
-                else {
-                    var count = index+1 >= max ? index : index+1;
-                    document.getElementsByClassName('carousel-wrapper')[0].style.transitionDuration = '700ms';
-                    document.getElementsByClassName('carousel-wrapper')[0].style.transform = `translateY(-${count}00vh)`;
-                }
+            item.onTouchEnd = (e) => {
+                console.log('asdf');
+                handleScroll(e, max, index);
             }
         });
     }, []);
