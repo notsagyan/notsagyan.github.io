@@ -237,7 +237,7 @@ const Home = () => {
                             <p className='sub-heading'>Let's Talk !</p>
                         </div>
                         <form ref={contactForm}>
-                            <div className='row'>
+                            <div className='row name-group'>
                                 <div className='form-group col-md-4'>
                                     <input className='form-control' name='first_name' placeholder='First Name*' onChange={handleContact} required></input>
                                 </div>

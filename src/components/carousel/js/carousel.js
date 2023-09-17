@@ -33,9 +33,7 @@ const Carousel = (props) => {
     useEffect(() => {
         var max = document.getElementsByClassName('my-carousel-item').length;
         Array.from(document.getElementsByClassName('my-carousel-item')).forEach((item, index) => {
-            item.style.transform = `translateY(${index}00vh)`; 
             item.onTouchEnd = (e) => {
-                console.log('asdf');
                 handleScroll(e, max, index);
             }
         });

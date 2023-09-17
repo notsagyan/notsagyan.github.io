@@ -93,7 +93,7 @@
 .my-section {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
 }
 
@@ -325,4 +325,82 @@
 
 .contact-container .primary-btn {
     margin-top: 25px;
+}
+
+@media only screen and (max-width: 900px) {
+    .landing-container {
+        text-align: center;
+    }
+    .social-container {
+        border-top: 1px solid rgb(255, 255, 255, 0.1);
+        position: fixed;
+        top: unset;
+        bottom: 0;
+        height: 80px;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        justify-content: space-evenly;
+        color: white;
+        width: 100vw;
+        font-size: 17px
+    }
+
+    .social-icon {
+        height: min-content;
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .social-icon:not(:first-child) {
+        margin-top: 0;
+    }
+
+    .name {
+        font-size: 70px;
+    }
+
+    .content {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .text-container {
+        margin-right: 0;
+    }
+
+    .landing-container .primary-btn {
+        margin-right: 0;
+    }
+
+    .about-us-container {
+        padding: 0;
+    }
+
+    .info-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .info-container .info {
+        padding: 25px;
+        margin-top: 50px;
+        margin-left: 0;
+        text-align: justify;
+    }
+
+    .contact-container form {
+        width: 90vw;
+        padding: 25px;
+        margin-right: 0;
+    }
+
+    .name-group div:not(:first-child) {
+        margin-top: 25px;
+    }
+
+    .contact-container form input {
+        max-width: 100%;
+    }
 }
