@@ -33,7 +33,7 @@ const Carousel = (props) => {
     useEffect(() => {
         var max = document.getElementsByClassName('my-carousel-item').length;
         Array.from(document.getElementsByClassName('my-carousel-item')).forEach((item, index) => {
-            item.onTouchEnd = (e) => {
+            item.onscroll = (e) => {
                 handleScroll(e, max, index);
             }
         });

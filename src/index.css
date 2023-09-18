@@ -72,8 +72,10 @@ p {
   width: max-content;
   color: var(--secondary);
   border: 1px solid var(--secondary);
+  border-radius: 3px;
   padding: 10px;
   transition-duration: 500ms;
+  text-decoration: none;
 }
 
 .primary-btn:hover {

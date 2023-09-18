@@ -1,7 +1,9 @@
-import '../css/home.css';
+import '../../assets/css/home.css';
 import { useEffect, useRef, useState } from 'react';
 import Carousel from '../../components/carousel/js/carousel';
 import Slider from '../../components/slider/js/slider';
+import { Link } from 'react-router-dom';
+import Resume from '../../assets/misc/resume.pdf';
 
 const getRandom = (max, min) => {
     min = Math.ceil(min);
@@ -29,6 +31,11 @@ class Moon{
     }
 
     update = () => {
+        this.draw();
+    }
+
+    remove = () => {
+        this.r = 0;
         this.draw();
     }
 }
@@ -121,8 +128,10 @@ const Home = () => {
 
         var ctx = canvas.getContext('2d');
 
-        var moon = new Moon(ctx);
-        moon.draw();
+        if (window.innerWidth >= 900){
+            var moon = new Moon(ctx);
+            moon.draw();
+        }
 
         window.onresize = () => {
             canvas.height = window.innerHeight;
@@ -130,8 +139,14 @@ const Home = () => {
 
             var ctx = canvas.getContext('2d');
             ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-            var moon = new Moon(ctx);
-            moon.draw();
+
+            if (window.innerWidth <= 900){
+                ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+            }
+            else {
+                var moon = new Moon(ctx);
+                moon.draw();
+            }
         }
     }, []);
 
@@ -140,11 +155,21 @@ const Home = () => {
             <canvas className='canvas' ref={canvasRef}> 
             </canvas>
             <div className='social-container'>
-                <i className="fa-brands fa-github social-icon"></i>
-                <i className="fa-brands fa-linkedin-in social-icon"></i>
-                <i className="fa-solid fa-envelope social-icon"></i>
-                <i className="fa-brands fa-twitter social-icon"></i>
-                <i className="fa-brands fa-facebook social-icon"></i>
+                <Link to={Resume} target='_blank' className='social-icon-link'>
+                    <i className="fa-brands fa-github social-icon"></i>
+                </Link>                    
+                <Link to={Resume} target='_blank' className='social-icon-link'>
+                    <i className="fa-brands fa-linkedin social-icon"></i>
+                </Link>
+                <Link to={Resume} target='_blank' className='social-icon-link'>
+                    <i className="fa-solid fa-home social-icon"></i>
+                </Link>
+                <Link to={Resume} target='_blank' className='social-icon-link'>
+                    <i className="fa-brands fa-github social-icon"></i>
+                </Link>
+                <Link to={Resume} target='_blank' className='social-icon-link'>
+                    <i className="fa-brands fa-github social-icon"></i>
+                </Link>
             </div>
 
             <div className='content'>
@@ -158,7 +183,7 @@ const Home = () => {
                             <p className='description'>Software Developer</p>
                         </div>
 
-                        <button className='primary-btn'>Resume</button>
+                        <Link to={Resume} className='primary-btn' target='_blank'>Resume</Link>
                     </div>
 
                     <div className='my-section about-us-container'>
