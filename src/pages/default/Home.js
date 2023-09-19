@@ -155,20 +155,20 @@ const Home = () => {
             <canvas className='canvas' ref={canvasRef}> 
             </canvas>
             <div className='social-container'>
-                <Link to={Resume} target='_blank' className='social-icon-link'>
+                <Link to='https://github.com/notsagyan' target='_blank' className='social-icon-link'>
                     <i className="fa-brands fa-github social-icon"></i>
                 </Link>                    
-                <Link to={Resume} target='_blank' className='social-icon-link'>
+                <Link to='https://www.linkedin.com/in/sagyan-singh-2a66a7221/' target='_blank' className='social-icon-link'>
                     <i className="fa-brands fa-linkedin social-icon"></i>
                 </Link>
-                <Link to={Resume} target='_blank' className='social-icon-link'>
+                <Link to='#' target='_blank' className='social-icon-link'>
                     <i className="fa-solid fa-home social-icon"></i>
                 </Link>
                 <Link to={Resume} target='_blank' className='social-icon-link'>
-                    <i className="fa-brands fa-github social-icon"></i>
+                    <i className="fa-brands fa-medium social-icon"></i>
                 </Link>
                 <Link to={Resume} target='_blank' className='social-icon-link'>
-                    <i className="fa-brands fa-github social-icon"></i>
+                    <i className="fa-brands fa-discord social-icon"></i>
                 </Link>
             </div>
 
