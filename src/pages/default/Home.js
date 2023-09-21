@@ -243,19 +243,19 @@ const Home = () => {
                             </div>
                             <div className='card-container'>
                                 <div className='card single-technology'>
-                                    <i class="fa-brands fa-js"></i>
+                                    <i className="fa-brands fa-js"></i>
                                 </div>
                                 <p className='caption'>Javascript</p>
                             </div>
                             <div className='card-container'>
                                 <div className='card single-technology'>
-                                    <i class="fa-brands fa-html5"></i>
+                                    <i className="fa-brands fa-html5"></i>
                                 </div>
                                 <p className='caption'>HTML</p>
                             </div>
                             <div className='card-container'>
                                 <div className='card single-technology'>
-                                    <i class="fa-brands fa-css3-alt"></i>
+                                    <i className="fa-brands fa-css3-alt"></i>
                                 </div>
                                 <p className='caption'>CSS</p>
                             </div>
@@ -267,7 +267,7 @@ const Home = () => {
                             </div>
                             <div className='card-container'>
                                 <div className='card single-technology'>
-                                    <i class="fa-brands fa-docker" style={{fontSize: '100px' }}></i>
+                                    <i className="fa-brands fa-docker" style={{fontSize: '100px' }}></i>
                                 </div>
                                 <p className='caption'>Docker</p>
                             </div>

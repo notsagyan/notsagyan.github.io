@@ -37,8 +37,10 @@ const Slider = (props) => {
             behavior: "smooth"
         });
 
+        console.log(scrollLength);
+
         setCurrentIndex((index) => {
-            return index==0 ? index:index-1
+            return index==0 ? index : index-1;
         });
     }
 

@@ -6,6 +6,7 @@
     scrollbar-width: none;
     position: relative;
     height: min-content;
+    width: 100%;
 }
 
 .slider-container::-webkit-scrollbar {
