@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, cloneElement } from "react";
 import '../css/slider.css';
 
 const Slider = (props) => {
-    const [autoScroll, setAutoScroll] = useState(true);
+    const [autoScroll, setAutoScroll] = useState(false);
     const [scrollLength, setScrollLength] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [total, setTotal] = useState(0);

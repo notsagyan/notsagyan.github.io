@@ -26,11 +26,17 @@ class Moon{
         this.ctx.beginPath();
         this.ctx.arc(this.ctx.canvas.width - 150, 100, this.r, 0, 2 * Math.PI, true);
         this.ctx.fillStyle = '#Eff3f5';
-        this.ctx.shadowBlur = 20;
+        this.ctx.shadowBlur = 10;
         this.ctx.shadowColor = '#Eff3f5';
         this.ctx.fill();
-        this.ctx.globalCompositeOperation = 'destination-over'; 
+        this.ctx.globalCompositeOperation = 'source-over'; 
+
+        // Crescent Moon
+        this.ctx.beginPath();
+        this.ctx.arc(this.ctx.canvas.width - 120, 90, 80, 0, 2 * Math.PI, true);
+        this.ctx.fillStyle = '#0a192f';
         this.ctx.shadowBlur = 0;
+        this.ctx.fill();
     }
 
     update = () => {
@@ -170,8 +176,8 @@ const Home = () => {
                 <Link to='https://medium.com/@workonsagyan' target='_blank' className='social-icon-link'>
                     <i className="fa-brands fa-medium social-icon"></i>
                 </Link>
-                <Link to='https://discordapp.com/users/460160579404038174' target='_blank' className='social-icon-link'>
-                    <i className="fa-brands fa-discord social-icon"></i>
+                <Link to='mailto:workonsagyan@gmail.com' className='social-icon-link'>
+                    <i className="fa-solid fa-envelope social-icon"></i>
                 </Link>
             </div>
 
