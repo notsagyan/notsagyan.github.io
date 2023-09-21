@@ -4,6 +4,9 @@ import Carousel from '../../components/carousel/js/carousel';
 import Slider from '../../components/slider/js/slider';
 import { Link } from 'react-router-dom';
 import Resume from '../../assets/misc/resume.pdf';
+import Django from '../../assets/images/logos/django.svg';
+import Flask from '../../assets/images/logos/flask.png';
+import Photo from '../../assets/images/misc/photo.jpg';
 
 const getRandom = (max, min) => {
     min = Math.ceil(min);
@@ -161,13 +164,13 @@ const Home = () => {
                 <Link to='https://www.linkedin.com/in/sagyan-singh-2a66a7221/' target='_blank' className='social-icon-link'>
                     <i className="fa-brands fa-linkedin social-icon"></i>
                 </Link>
-                <Link to='#' target='_blank' className='social-icon-link'>
+                <Link to='#' className='social-icon-link'>
                     <i className="fa-solid fa-home social-icon"></i>
                 </Link>
-                <Link to={Resume} target='_blank' className='social-icon-link'>
+                <Link to='https://medium.com/@workonsagyan' target='_blank' className='social-icon-link'>
                     <i className="fa-brands fa-medium social-icon"></i>
                 </Link>
-                <Link to={Resume} target='_blank' className='social-icon-link'>
+                <Link to='https://discordapp.com/users/460160579404038174' target='_blank' className='social-icon-link'>
                     <i className="fa-brands fa-discord social-icon"></i>
                 </Link>
             </div>
@@ -183,7 +186,7 @@ const Home = () => {
                             <p className='description'>Software Developer</p>
                         </div>
 
-                        <Link to={Resume} className='primary-btn' target='_blank'>Resume</Link>
+                        <Link to={Resume} className='primary-btn' target='_blank' download='Resume - Sagyan Singh'>Resume</Link>
                     </div>
 
                     <div className='my-section about-us-container'>
@@ -193,7 +196,7 @@ const Home = () => {
                         </div>
                         <div className='info-container'>
                             <div className='img-container'>
-                                <img className='img' src='https://images.unsplash.com/photo-1543373014-cfe4f4bc1cdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGlnaCUyMHJlcyUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'></img>
+                                <img className='img' src={Photo}></img>
                             </div>
                             <div className='info'>
                                 <p>Software developer with a strong foundation in software engineering and programming principles. Proficient in a wide range of languages on different platforms with a passion to learn and master new technologies. 3+ years of experience in Full Stack Development with a strong focus on backend.</p>
@@ -222,21 +225,45 @@ const Home = () => {
                             </div>
                             <div className='card-container'>
                                 <div className='card single-technology'>
-                                    <i className="fa-brands fa-python"></i>
+                                    <img src={Django} />
                                 </div>
-                                <p className='caption'>Python</p>
+                                <p className='caption'>Django</p>
                             </div>
                             <div className='card-container'>
                                 <div className='card single-technology'>
-                                    <i className="fa-brands fa-python"></i>
+                                    <img src={Flask} />
                                 </div>
-                                <p className='caption'>Python</p>
+                                <p className='caption'>Flask</p>
                             </div>
                             <div className='card-container'>
                                 <div className='card single-technology'>
-                                    <i className="fa-brands fa-python"></i>
+                                    <i class="fa-brands fa-js"></i>
                                 </div>
-                                <p className='caption'>Python</p>
+                                <p className='caption'>Javascript</p>
+                            </div>
+                            <div className='card-container'>
+                                <div className='card single-technology'>
+                                    <i class="fa-brands fa-html5"></i>
+                                </div>
+                                <p className='caption'>HTML</p>
+                            </div>
+                            <div className='card-container'>
+                                <div className='card single-technology'>
+                                    <i class="fa-brands fa-css3-alt"></i>
+                                </div>
+                                <p className='caption'>CSS</p>
+                            </div>
+                            <div className='card-container'>
+                                <div className='card single-technology'>
+                                    <p>FastAPI</p>
+                                </div>
+                                <p className='caption'>FastAPI</p>
+                            </div>
+                            <div className='card-container'>
+                                <div className='card single-technology'>
+                                    <i class="fa-brands fa-docker" style={{fontSize: '100px' }}></i>
+                                </div>
+                                <p className='caption'>Docker</p>
                             </div>
                         </Slider>
                     </div>
