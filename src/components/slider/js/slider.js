@@ -61,7 +61,7 @@ const Slider = (props) => {
 
     useEffect(() => {
         setTotal(props.children.length);
-        const width = document.getElementsByClassName('slider-item')[0].getBoundingClientRect().width;
+        const width = document.getElementsByClassName('slider-item')[0].getBoundingClientRect().width + 30;
         setScrollLength(width);
     }, []);
 
@@ -90,7 +90,9 @@ const Slider = (props) => {
     return (
         <div className="slider-container" ref={slider} onMouseOver={() => toggleAutoScroll(false)} onMouseLeave={() => toggleAutoScroll(true)}>
             <i className="fa-solid fa-chevron-left slider-left" onClick={handleLeftBtn}></i>
-            {transformChildren()}
+            <div className="slider-wrapper">
+                {transformChildren()}
+            </div>
             <i className="fa-solid fa-chevron-right slider-right" onClick={handleRightBtn}></i>
         </div>
     );
