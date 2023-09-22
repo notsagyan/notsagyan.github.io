@@ -7,6 +7,7 @@ import Resume from '../../assets/misc/resume.pdf';
 import Django from '../../assets/images/logos/django.svg';
 import Flask from '../../assets/images/logos/flask.png';
 import Photo from '../../assets/images/misc/photo.jpg';
+import Logo from '../../assets/images/logos/logo.svg';
 
 const getRandom = (max, min) => {
     min = Math.ceil(min);
@@ -171,7 +172,7 @@ const Home = () => {
                     <i className="fa-brands fa-linkedin social-icon"></i>
                 </Link>
                 <Link to='#' className='social-icon-link'>
-                    <i className="fa-solid fa-home social-icon"></i>
+                    <img style={{height: '35px', width: '35px'}} src={Logo} />
                 </Link>
                 <Link to='https://medium.com/@workonsagyan' target='_blank' className='social-icon-link'>
                     <i className="fa-brands fa-medium social-icon"></i>

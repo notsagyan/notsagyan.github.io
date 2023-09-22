@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, cloneElement } from "react";
 import '../css/slider.css';
 
 const Slider = (props) => {
-    const [autoScroll, setAutoScroll] = useState(false);
+    const [autoScroll, setAutoScroll] = useState(true);
     const [scrollLength, setScrollLength] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [total, setTotal] = useState(0);
@@ -36,8 +36,6 @@ const Slider = (props) => {
             left: -scrollLength,
             behavior: "smooth"
         });
-
-        console.log(scrollLength);
 
         setCurrentIndex((index) => {
             return index==0 ? index : index-1;

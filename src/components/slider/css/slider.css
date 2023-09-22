@@ -1,12 +1,12 @@
 .slider-container {
     display: flex;
     flex-direction: row;
-    align-items: center;
     overflow: scroll;
     scrollbar-width: none;
     position: relative;
     height: min-content;
-    width: 100%;
+    width: min-content;
+    padding: 0;
 }
 
 .slider-container::-webkit-scrollbar {
@@ -34,6 +34,8 @@
 
 .slider-right, .slider-left {
     border-radius: 50%;
+    height: 40px;
+    width: 40px;
     border: 1px solid gray;
     background-color: gray;
     opacity: 0.5;
