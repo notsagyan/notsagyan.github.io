@@ -172,6 +172,17 @@
     margin-bottom: 50px;
 }
 
+.img-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.display-picture {
+    height: 300px;
+    width: 300px;
+}
+
 .info-container {
     display: flex;
     flex-direction: row;
@@ -224,7 +235,7 @@
 
 .card-container {
     position: relative;
-    height: auto;
+    height: 100%;
 }
 
 .single-technology {
@@ -298,6 +309,17 @@
     padding-top: 150px;
 }
 
+.project-container .slider-container {
+    height: 350px;
+    width: 300px;
+}
+
+.project-img {
+    height: 350px;
+    width: 300px;
+    object-fit: cover;
+}
+
 .gallery-container {
     display: flex;
     flex-direction: row;
@@ -319,11 +341,6 @@
 .project-container .slider-container {
     width: 70vw;
     column-gap: 30px;
-}
-
-.img {
-    height: 500px;
-    width: 350px;
 }
 
 .contact-container {

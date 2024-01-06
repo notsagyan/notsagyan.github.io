@@ -8,6 +8,7 @@ import Django from '../../assets/images/logos/django.svg';
 import Flask from '../../assets/images/logos/flask.png';
 import Photo from '../../assets/images/misc/photo.jpg';
 import Logo from '../../assets/images/logos/logo.svg';
+import Issurkhet from '../../assets/images/projects/mainlogo.jpg';
 
 const getRandom = (max, min) => {
     min = Math.ceil(min);
@@ -205,7 +206,7 @@ const Home = () => {
                         </div>
                         <div className='info-container'>
                             <div className='img-container'>
-                                <img className='img' src={Photo}></img>
+                                <img className='display-picture' src={Photo}></img>
                             </div>
                             <div className='info'>
                                 <p>Full Stack developer with a strong foundation in software engineering and programming principles. Proficient in a wide range of languages on different platforms with a passion to learn and master new technologies. 3+ years of experience in Full Stack Development with a strong focus on backend.</p>
@@ -289,20 +290,26 @@ const Home = () => {
                         </Slider>
                     </div>
 
-                    <div className='my-section project-container'>
+                    {/* <div className='my-section project-container'>
                         <div className='header-section'>
                             <p className='heading'>Works</p>
                             <p className='sub-heading'>My Projects</p>
                         </div>
                         <Slider>
-                            <img className='img' src='https://images.unsplash.com/photo-1543373014-cfe4f4bc1cdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGlnaCUyMHJlcyUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'></img>
-                            <img className='img' src='https://images.unsplash.com/photo-1543373014-cfe4f4bc1cdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGlnaCUyMHJlcyUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'></img>
-                            <img className='img' src='https://images.unsplash.com/photo-1543373014-cfe4f4bc1cdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGlnaCUyMHJlcyUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'></img>
-                            <img className='img' src='https://images.unsplash.com/photo-1543373014-cfe4f4bc1cdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGlnaCUyMHJlcyUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'></img>
-                            <img className='img' src='https://images.unsplash.com/photo-1543373014-cfe4f4bc1cdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGlnaCUyMHJlcyUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'></img>
-                            <img className='img' src='https://images.unsplash.com/photo-1543373014-cfe4f4bc1cdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGlnaCUyMHJlcyUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'></img>
+                            <div className='card-container'>
+                                <div className='card'>
+                                    <img className='project-img' src={Issurkhet}></img>
+                                </div>
+                                <p className='caption'>Interdependent Society Surkhet</p>   
+                            </div>
+                            <div className='card-container'>
+                                <div className='card'>
+                                    <img className='project-img' src='https://images.unsplash.com/photo-1543373014-cfe4f4bc1cdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGlnaCUyMHJlcyUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80'></img>
+                                </div>
+                                <p className='caption'>Kubernetes</p>
+                            </div>
                         </Slider>
-                    </div>
+                    </div> */}
 
                     <div className='my-section contact-container'>
                         <div className='header-section'>
