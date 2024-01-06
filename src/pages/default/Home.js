@@ -50,62 +50,56 @@ class Moon{
     }
 }
 
-class Star {
+class Meteor {
     constructor(ctx){
+        this.x = 600;
+        this.y = 500;
+        this.length = 0;
+        this.thickness = 0;
+        this.color = "yellow";
         this.ctx = ctx;
-        this.x = getRandom(0, this.ctx.canvas.width);
-        this.y = getRandom(0, this.ctx.canvas.height);
-        this.r = 1;
-        this.color = 'white';
     }
 
     draw = () => {
+        // Draw meteor head
+        this.ctx.fillStyle = "yellow";
         this.ctx.beginPath();
-        this.ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
-        this.ctx.fillStyle = this.color;
+        this.ctx.ellipse(this.x, this.y, 20, 10, Math.PI * 0.25, 0, Math.PI);
         this.ctx.fill();
+
+        // Draw meteor trail
+        this.ctx.rotate(1);
+        this.ctx.fillStyle = "yellow";
+        this.ctx.fillRect(this.x, this.y, 200, 2);
+        this.ctx.rotate(-1);
     }
 
     update = () => {
-        if (Math.floor(Math.random()*30) === 23){
-            this.r = 0;
-        }
-        else {
-            this.r = 1.2;
-        }
+        this.x -= 0;
+        this.y += 0;
         this.draw();
-    }
-}
-
-class Meteor {
-    constructor(){
-
-    }
-
-    draw = () => {
-
     }
 }
 
 class Animate {
     constructor(ctx) {
         this.ctx = ctx;
-        this.stars = [];
     }
 
     init = () => {
         // Draw moon
         this.moon = new Moon(this.ctx);
         this.moon.draw();
+
+        // this.meteor = new Meteor(this.ctx);
+        // this.meteor.draw();
     }
 
     start = () => {
         this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
-        this.moon.update();
 
-        this.stars.forEach((item) => {
-            item.update();
-        });
+        this.moon.update();
+        // this.meteor.update();
 
         window.requestAnimationFrame(this.start);
     }
@@ -142,6 +136,10 @@ const Home = () => {
             var moon = new Moon(ctx);
             moon.draw();
         }
+
+        var animate = new Animate(ctx);
+        animate.init();
+        animate.start();
 
         window.onresize = () => {
             canvas.height = window.innerHeight;
@@ -190,10 +188,14 @@ const Home = () => {
                                 <p className='first-name'>Sagyan&nbsp;</p>
                                 <p className='last-name'>Singh</p>
                             </div>
-                            <p className='description'>Software Developer</p>
+                            <p className='description'>Software Engineer</p>
                         </div>
 
                         <Link to={Resume} className='primary-btn' target='_blank' download='Resume - Sagyan Singh'>Resume</Link>
+                        
+                        <div className='angle-down-wrapper'>
+                            <i className="fa-solid fa-angles-down"></i>
+                        </div>
                     </div>
 
                     <div className='my-section about-us-container'>
@@ -206,11 +208,11 @@ const Home = () => {
                                 <img className='img' src={Photo}></img>
                             </div>
                             <div className='info'>
-                                <p>Software developer with a strong foundation in software engineering and programming principles. Proficient in a wide range of languages on different platforms with a passion to learn and master new technologies. 3+ years of experience in Full Stack Development with a strong focus on backend.</p>
+                                <p>Full Stack developer with a strong foundation in software engineering and programming principles. Proficient in a wide range of languages on different platforms with a passion to learn and master new technologies. 3+ years of experience in Full Stack Development with a strong focus on backend.</p>
                                 <br></br>
                                 <p>Python (Django, FastAPI, Flask, Selenium)</p>
                                 <p>HTML/CSS</p>
-                                <p>Javascript (React JS, Typescript, JQuery)</p>
+                                <p>Javascript (React, Typescript, JQuery)</p>
                                 <p>Docker</p>
                                 <p>Kubernetes</p>
                                 <p>Agile</p>
@@ -244,9 +246,21 @@ const Home = () => {
                             </div>
                             <div className='card-container'>
                                 <div className='card single-technology'>
+                                    <p>FastAPI</p>
+                                </div>
+                                <p className='caption'>FastAPI</p>
+                            </div>
+                            <div className='card-container'>
+                                <div className='card single-technology'>
                                     <i className="fa-brands fa-js"></i>
                                 </div>
                                 <p className='caption'>Javascript</p>
+                            </div>
+                            <div className='card-container'>
+                                <div className='card single-technology'>
+                                    <p>TypeScript</p>
+                                </div>
+                                <p className='caption'>TypeScript</p>
                             </div>
                             <div className='card-container'>
                                 <div className='card single-technology'>
@@ -262,15 +276,15 @@ const Home = () => {
                             </div>
                             <div className='card-container'>
                                 <div className='card single-technology'>
-                                    <p>FastAPI</p>
-                                </div>
-                                <p className='caption'>FastAPI</p>
-                            </div>
-                            <div className='card-container'>
-                                <div className='card single-technology'>
                                     <i className="fa-brands fa-docker" style={{fontSize: '100px' }}></i>
                                 </div>
                                 <p className='caption'>Docker</p>
+                            </div>
+                            <div className='card-container'>
+                                <div className='card single-technology'>
+                                    <p>Kubernetes</p>
+                                </div>
+                                <p className='caption'>Kubernetes</p>
                             </div>
                         </Slider>
                     </div>
