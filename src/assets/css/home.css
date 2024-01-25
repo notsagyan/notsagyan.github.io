@@ -468,13 +468,18 @@
         text-align: justify;
     }
 
+    .img-container {
+        align-items: center;
+        justify-content: center;
+    }
+
     .contact-container form {
         width: 90vw;
         padding: 25px;
         margin-right: 0;
     }
 
-    .name-group div:not(:first-child) {
+    .name-group div {
         margin-top: 25px;
     }
 
