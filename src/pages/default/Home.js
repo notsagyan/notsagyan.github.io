@@ -192,7 +192,7 @@ const Home = () => {
                             <p className='description'>Software Engineer</p>
                         </div>
 
-                        <Link to={Resume} className='primary-btn' target='_blank' download='Resume - Sagyan Singh'>Resume</Link>
+                        <Link to={Resume} className='primary-btn' target='_blank' download='Resume - Sagyan Singh'>Download CV</Link>
                         
                         <div className='angle-down-wrapper'>
                             <i className="fa-solid fa-angles-down"></i>
