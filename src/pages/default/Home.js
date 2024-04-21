@@ -209,7 +209,7 @@ const Home = () => {
                                 <img className='display-picture' src={Photo}></img>
                             </div>
                             <div className='info'>
-                                <p>Full Stack developer with a strong foundation in software engineering and programming principles. Proficient in a wide range of languages on different platforms with a passion to learn and master new technologies. 3+ years of experience in Full Stack Development with a strong focus on backend.</p>
+                                <p>Full Stack developer with a strong foundation in software engineering and programming principles. Proficient in a wide range of languages on different platforms with a passion to learn and master new technologies. Extensive experience in Full Stack Development with a strong focus on backend.</p>
                                 <br></br>
                                 <p>Python (Django, FastAPI, Flask, Selenium)</p>
                                 <p>HTML/CSS</p>
