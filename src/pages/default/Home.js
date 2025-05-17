@@ -9,6 +9,7 @@ import Flask from '../../assets/images/logos/flask.png';
 import Photo from '../../assets/images/misc/photo.jpg';
 import Logo from '../../assets/images/logos/logo.svg';
 import Issurkhet from '../../assets/images/projects/mainlogo.jpg';
+import { ToastContainer, toast } from 'react-toastify';
 
 const getRandom = (max, min) => {
     min = Math.ceil(min);
@@ -123,7 +124,47 @@ const Home = () => {
 
     const handleContactSubmit = (e) => {
         e.preventDefault();
-        contactForm.current.reportValidity();
+        if (contactForm.current.reportValidity()){
+            fetch('https://formspree.io/f/xjkwljvk', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    first_name: contact.first_name[0],
+                    middle_name: contact.middle_name[0],
+                    last_name: contact.last_name[0],
+                    email: contact.email[0],
+                    message: contact.message[0]
+                })
+            }).then(response => {
+                if (response.ok) {
+                    toast('✉️ Message sent successfully', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "dark"
+                    });
+                    setContact({});
+                    contactForm.current.reset();
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            console.log("Oops! There was a problem submitting your form");
+                        }
+                    });
+                }
+            }).catch(error => {
+                console.log(error);
+            });
+        }
     }
 
     useEffect(() => {
@@ -132,25 +173,20 @@ const Home = () => {
         canvas.width = window.innerWidth;
 
         var ctx = canvas.getContext('2d');
-
-        if (window.innerWidth >= 900){
-            var moon = new Moon(ctx);
-            moon.draw();
-        }
-
-        var animate = new Animate(ctx);
-        animate.init();
-        animate.start();
+        var moon = new Moon(ctx);
+        moon.draw();
+        
 
         window.onresize = () => {
             canvas.height = window.innerHeight;
             canvas.width = window.innerWidth;
 
-            var ctx = canvas.getContext('2d');
+            
             ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
             if (window.innerWidth <= 900){
                 ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+                console.log("clearnign");
             }
             else {
                 var moon = new Moon(ctx);
@@ -161,6 +197,7 @@ const Home = () => {
 
     return (
         <>
+            <ToastContainer />
             <canvas className='canvas' ref={canvasRef}> 
             </canvas>
             <div className='social-container'>
@@ -209,14 +246,13 @@ const Home = () => {
                                 <img className='display-picture' src={Photo}></img>
                             </div>
                             <div className='info'>
-                                <p>Full Stack developer with a strong foundation in software engineering and programming principles. Proficient in a wide range of languages on different platforms with a passion to learn and master new technologies. Extensive experience in Full Stack Development with a strong focus on backend.</p>
+                                <p>Software Engineer with strong practical experience in designing, developing, and deploying full stack web applications using Python, React, and modern cloud tools. Seeking a developer role to contribute to scalable, maintainable software system. </p>
                                 <br></br>
-                                <p>Python (Django, FastAPI, Flask, Selenium)</p>
-                                <p>HTML/CSS</p>
-                                <p>Javascript (React, Typescript, JQuery)</p>
-                                <p>Docker</p>
-                                <p>Kubernetes</p>
-                                <p>Agile</p>
+                                <p>Programming Languages: Python, JavaScript (ES6+), TypeScript. </p>
+                                <p>Frameworks: Django, DRF, FastAPI, React, Next.js, Express, Node.js. </p>
+                                <p>Cloud: AWS (Lightsail).</p>
+                                <p>Database Systems: PostgreSQL, MySQL, MongoDB, SQLite. </p>
+                                <p>Tools and Others: HTML5, CSS3, jQuery, Jinja, Docker, Git, Nginx, Pytest, Jest.</p>
                             </div>
                         </div>
                     </div>
@@ -255,13 +291,25 @@ const Home = () => {
                                 <div className='card single-technology'>
                                     <i className="fa-brands fa-js"></i>
                                 </div>
-                                <p className='caption'>Javascript</p>
+                                <p className='caption'>Javascript (ES6+)</p>
                             </div>
                             <div className='card-container'>
                                 <div className='card single-technology'>
                                     <p>TypeScript</p>
                                 </div>
                                 <p className='caption'>TypeScript</p>
+                            </div>
+                            <div className='card-container'>
+                                <div className='card single-technology'>
+                                    <p>React</p>
+                                </div>
+                                <p className='caption'>React</p>
+                            </div>
+                            <div className='card-container'>
+                                <div className='card single-technology'>
+                                    <p>Next.js</p>
+                                </div>
+                                <p className='caption'>Next.js</p>
                             </div>
                             <div className='card-container'>
                                 <div className='card single-technology'>
@@ -283,9 +331,21 @@ const Home = () => {
                             </div>
                             <div className='card-container'>
                                 <div className='card single-technology'>
-                                    <p>Kubernetes</p>
+                                    <p>PostgreSQL</p>
                                 </div>
-                                <p className='caption'>Kubernetes</p>
+                                <p className='caption'>PostgreSQL</p>
+                            </div>
+                            <div className='card-container'>
+                                <div className='card single-technology'>
+                                    <p>MySQL</p>
+                                </div>
+                                <p className='caption'>MySQL</p>
+                            </div>
+                            <div className='card-container'>
+                                <div className='card single-technology'>
+                                    <p>SqLite</p>
+                                </div>
+                                <p className='caption'>SqLite</p>
                             </div>
                         </Slider>
                     </div>
