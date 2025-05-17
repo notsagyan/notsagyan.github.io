@@ -133,7 +133,7 @@ const Home = () => {
                 },
                 body: JSON.stringify({
                     first_name: contact.first_name[0],
-                    middle_name: contact.middle_name[0],
+                    middle_name: contact.middle_name ? contact.middle_name[0]: '',
                     last_name: contact.last_name[0],
                     email: contact.email[0],
                     message: contact.message[0]
@@ -186,7 +186,6 @@ const Home = () => {
 
             if (window.innerWidth <= 900){
                 ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-                console.log("clearnign");
             }
             else {
                 var moon = new Moon(ctx);
